@@ -1,0 +1,18 @@
+import requests
+from bs4 import BeautifulSoup
+import urllib
+
+def parse_images(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    img_tags = soup.find_all('img')
+    image_urls = [img['src'] for img in img_tags]
+    for image_url in image_urls:
+        try:
+            urllib.request.urlretrieve(image_url, image_url.split('/')[-1])
+            print("Saved: ", image_url.split('/')[-1])
+        except:
+            print("Failed to save: ", image_url)
+
+# Example usage
+parse_images('https://www.example.com')
