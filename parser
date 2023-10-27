@@ -16,4 +16,4 @@ def parse_images(url):
             print("Failed to save: ", image_url)
 
 # Example usage
-parse_images('https://www.example.com')
+parse_images('https://www.examples.com')
