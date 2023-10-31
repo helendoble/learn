@@ -13,7 +13,7 @@ def parse_images(url):
             urllib.request.urlretrieve(image_url, image_url.split('/')[-1])
             print("Saved: ", image_url.split('/')[-1])
         except:
-            print("Failed to save: ", image_url)
+            print("Fail to save: ", image_url)
 
 # Example usage
 parse_images('https://www.examples.com')
